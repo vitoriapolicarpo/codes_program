@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background="https://i.pinimg.com/564x/2c/45/9b/2c459bf7ccf6227ae7b9ae41bd87e9ab.jpg">
+    <center>
+    <input id="numero" type="number" placeholder="Digite a temperatura!"> <br><br>
+   <input id="cf" type="radio" name="grupo">Celsius para Fahrenheit </input> <br> <br>
+   <input id="fc" type="radio" name="grupo">Fahrenheit para Celsius </input> <br> <br>
+   <input id="ck" type="radio" name="grupo">Celsius para Kelvin </input> <br> <br>
+   <input id="kc" type="radio" name="grupo">Kelvin para Celsius </input> <br> <br>
+   <input id="fk" type="radio" name="grupo">Fahrenheit para Kelvin </input> <br> <br>
+   <input id="kf" type="radio" name="grupo">Kelvin para Fahrenheit </input> <br> <br>
+    <button onclick="calculo()">Calcular</button> <br><br>
+    <p id="R">RESULTADO</p>
+    <center>
+</body>
+</html>
+<script>
+    var campo = document.getElementById("numero");
+    var radioCF = document.getElementById("cf")
+    var radioFC = document.getElementById("fc")
+    var radioCK = document.getElementById("ck")
+    var radioKC = document.getElementById("kc")
+    var radioFK = document.getElementById("fk")
+    var radioKF = document.getElementById("kf")
+    var resultado = document.getElementById("R")
+
+function calculo(){
+    var temperatura = Number (campo.value)
+  if(radioCF.checked){
+     resultado.innerHTML= temperatura * 9/5 + 32 + "°F"
+}
+else if(radioFC.checked){
+    resultado.innerHTML= (temperatura - 32) * 5/9 + "°C"
+}
+else if(radioCK.checked){
+    resultado.innerHTML= temperatura + 273.15 + "°K"
+}
+else if(radioKC.checked){
+    resultado.innerHTML= temperatura - 273.15 + "°C"
+}
+else if(radioFK.checked){
+    resultado.innerHTML= (temperatura - 32) * 5/9 + 273.15 + "°K"
+}
+else if(radioKF.checked){
+    resultado.innerHTML= (temperatura - 273.15) * 9/5 + 32 + "°F"
+}
+else{
+    alert("Você precisa selecionar alguma opção!")
+}
+}
+</script>
